@@ -1,0 +1,17 @@
+services:
+  mysql-inventario:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: greenstock_inventario
+      MYSQL_USER: greenstock
+      MYSQL_PASSWORD: greenstock
+    ports: ["3307:3306"]
+  mysql-ofertas:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: greenstock_ofertas
+      MYSQL_USER: greenstock
+      MYSQL_PASSWORD: greenstock
+    ports: ["3308:3306"]
