@@ -7,6 +7,12 @@ services:
       MYSQL_USER: greenstock
       MYSQL_PASSWORD: greenstock
     ports: ["3307:3306"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
   mysql-ofertas:
     image: mysql:8.4
     environment:
@@ -15,3 +21,9 @@ services:
       MYSQL_USER: greenstock
       MYSQL_PASSWORD: greenstock
     ports: ["3308:3306"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
